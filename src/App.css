@@ -16,6 +16,14 @@
 
 .fc-toolbar.fc-header-toolbar .fc-center {
     font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.fc-toolbar.fc-header-toolbar .fc-center button {
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
 .fc-toolbar.fc-header-toolbar .fc-right button, .fc-toolbar.fc-header-toolbar .fc-left button {
@@ -23,11 +31,31 @@
     border: none;
 }
 
-.fc-toolbar.fc-header-toolbar .fc-left button {
-    border-radius: 50%;
+.fc-button-primary:not(:disabled):active:focus, .fc-button-primary:not(:disabled).fc-button-active:focus {
+    box-shadow: none;
+}
+
+.fc th {
+    vertical-align: middle;
+    text-transform: capitalize;
+    height: 32px;
+    font-weight: 500;
+}
+
+.fc-list-heading .fc-widget-header {
+    height: 32px;
+    vertical-align: middle;
+    padding: 0 16px;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
+    .fc-toolbar.fc-header-toolbar .fc-center h2 {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
     .fc-toolbar.fc-header-toolbar {
         display: flex;
         justify-content: center;

@@ -24,7 +24,7 @@ export default class App extends React.Component {
         }, {
             id: 3,
             title: 'Glenio',
-            start: '2019-08-30'
+            start: '2019-09-06'
         }];
 
         return (
@@ -33,24 +33,12 @@ export default class App extends React.Component {
                               plugins={[dayGridPlugin, listPlugin, interactionPlugin]}
                               dateClick={this.handleDateClick}
                               header={{
-                                  left: 'prev, next today',
-                                  center: 'title',
-                                  right: 'dayGridMonth dayGridWeek list'
+                                  left: 'today',
+                                  center: 'prevYear prev title next nextYear',
+                                  right: 'dayGridMonth list'
                               }}
-                              views={{
-                                  dayGridMonth: {
-                                      titleFormat: {
-                                          year: 'numeric',
-                                          month: 'long'
-                                      }
-                                  },
-                                  week: {
-                                      titleFormat: {
-                                          year: 'numeric',
-                                          month: 'long',
-                                          day: 'numeric'
-                                      }
-                                  }
+                              buttonText={{
+                                  list: 'Dia',
                               }}
                               weekends={true}
                               fullscreen={false}
