@@ -15,30 +15,32 @@ export default class App extends React.Component {
             id: 1,
             title: 'Teste Frau',
             start: '2019-08-30',
-            classNames: ['teste'],
+            classNames: ['concluido'],
             allDay: true
         }, {
             id: 2,
             title: 'Leonardo',
             start: '2019-08-25',
-            end: '2019-08-28',
+            classNames: ['atrasado'],
             allDay: true
         }, {
             id: 3,
             title: 'Glenio',
-            start: '2019-09-06'
+            start: '2019-09-06',
+            classNames: ['andamento'],
+            allDay: true
         }];
 
         return (
             <div className="App">
                 <FullCalendar defaultView="dayGridMonth"
-                              plugins={[dayGridPlugin, listPlugin, interactionPlugin]}
+                              plugins={[dayGridPlugin, interactionPlugin]}
                               dateClick={this.handleDateClick}
                               ref={this.calendarRef}
                               header={{
                                   left: 'today',
                                   center: 'previousYear previousMonth title nextMonth nextYear',
-                                  right: 'dayGridMonth list'
+                                  right: 'dayGridMonth dayGridDay'
                               }}
                               buttonText={{
                                   list: 'Dia',
@@ -86,24 +88,24 @@ export default class App extends React.Component {
     handlePreviousMonth = () => {
         let calendarApi = this.calendarRef.current.getApi();
         calendarApi.prev();
-        console.log(calendarApi.getDate());
+        console.log(calendarApi.getDate().toISOString());
     };
 
     handleNextMonth = () => {
         let calendarApi = this.calendarRef.current.getApi();
         calendarApi.next();
-        console.log(calendarApi.getDate());
+        console.log(calendarApi.getDate().toISOString());
     };
 
     handlePreviousYear = () => {
         let calendarApi = this.calendarRef.current.getApi();
         calendarApi.prevYear();
-        console.log(calendarApi.getDate());
+        console.log(calendarApi.getDate().toISOString());
     };
 
     handleNextYear = () => {
         let calendarApi = this.calendarRef.current.getApi();
         calendarApi.nextYear();
-        console.log(calendarApi.getDate());
+        console.log(calendarApi.getDate().toISOString());
     }
 }
